@@ -1,6 +1,9 @@
 "use client";
 
-
+import Image from "next/image";
+import Link from "next/link";
+import { Zap, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ProductHomepageCardComponent() {
   return (
@@ -22,8 +25,10 @@ export default function ProductHomepageCardComponent() {
       </div>
       <div className="relative z-10 flex items-center justify-center py-4 transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-3">
         <Image
-          src={""}
+          src="/img/macbookM5.png"
           alt="Macbook Pro M5"
+          width={400}
+          height={300}
           className="w-full h-auto drop-shadow-[0_35px_35px_rgba(236,72,153,0.3)]"
           priority
         />
@@ -36,7 +41,7 @@ export default function ProductHomepageCardComponent() {
           <span className="text-2xl font-black text-slate-800">$1,999</span>
         </div>
 
-        <Link>
+        <Link href="/products">
           <Button className="group/btn bg-pink-400 hover:bg-pink-600 text-white h-14 px-8 rounded-2xl font-bold shadow-lg shadow-pink-200 transition-all active:scale-95 flex gap-2">
             View Details
             <ArrowRight className="size-4 transition-transform group-hover/btn:translate-x-1" />

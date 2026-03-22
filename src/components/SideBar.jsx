@@ -53,7 +53,6 @@ export function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className="space-y-2">
-              {/* Products */}
               <SidebarMenuItem>
                 <SidebarMenuButton
                   asChild
@@ -75,8 +74,6 @@ export function AppSidebar() {
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-
-              {/* Customers */}
               <SidebarMenuItem>
                 <SidebarMenuButton
                   asChild
@@ -98,8 +95,6 @@ export function AppSidebar() {
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-
-              {/* Categories */}
               <SidebarMenuItem>
                 <SidebarMenuButton
                   asChild
@@ -121,8 +116,6 @@ export function AppSidebar() {
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-
-              {/* Settings */}
               <SidebarMenuItem>
                 <SidebarMenuButton
                   asChild
@@ -148,23 +141,6 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-
-      {/* ── Footer with Logout ── */}
-      <SidebarFooter className="border-t border-slate-200 px-3 py-4">
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="rounded-lg px-4 py-3 text-slate-600 transition-all hover:bg-red-50 hover:text-red-600"
-            >
-              <button className="flex items-center gap-3 w-full">
-                <LogOut className="h-5 w-5 shrink-0" />
-                <span className="text-sm font-medium">Logout</span>
-              </button>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter>
     </Sidebar>
   );
 }
