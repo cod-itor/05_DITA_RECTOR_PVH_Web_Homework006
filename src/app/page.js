@@ -1,12 +1,10 @@
-import Image from "next/image";
-import CustomerHomepageCardComponent from "./Component/CustomerHomepageCardComponent";
-import ProductHomepageCardComponent from "./Component/ProductHomepageCardComponent";
+import CustomerHomepageCardComponent from "../components/CustomerHomepageCardComponent";
+import ProductHomepageCardComponent from "../components/ProductHomepageCardComponent";
 
 export default function Home() {
   return (
     <>
-    <CustomerHomepageCardComponent/>
-    <ProductHomepageCardComponent/>
+  <h1>Hello world</h1>
     
     </>
   );
