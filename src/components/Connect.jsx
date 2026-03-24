@@ -1,12 +1,15 @@
 import React from 'react'
+import ProductHomepageCardComponent from './ProductHomepageCardComponent';
+import CustomerHomepageCardComponent from './CustomerHomepageCardComponent';
 
 export async function Connect() {
-    const connect = await fetch('https://homework-api.noevchanmakara.site/api/v1');
+    const connect = await fetch('https://homework-api.noevchanmakara.site/api/v1/products');
   const dataUser = await connect.json();
   console.log(dataUser)
   return (
     <div>
-        working
+        <ProductHomepageCardComponent products = {dataUser.payload} />
+        {/* <CustomerHomepageCardComponent/> */}
       
     </div>
   )
