@@ -1,33 +1,70 @@
-
 import React from 'react'
 import Image from "next/image";
+import { Star, ArrowUpRight } from 'lucide-react';
 import ViewProductButton from './ViewProductButton';
 
-export default function ProductCard() {
+export default function ProductCard({ products }) {
+  if (!products) return null;
+
   return (
-    <div className="max-w-md w-full max-w-md h-[400px]  p-8 flex flex-col overflow-hidden border rounded-2xl  ">
-        <div>
+    <div className='flex flex-row flex-wrap gap-6 p-6'>
+      {products.map((product) => (
+        <div
+          key={product.productId}
+          className="w-[280px] sm:w-[300px] flex flex-col rounded-2xl border border-gray-200 overflow-hidden shadow-md bg-white"
+        >
+          {/* Image Area */}
+          <div className="relative w-full h-[300px] bg-[#1a1f2e]">
+            <Image
+              src="/img/ladyHoldingLaptop.png"
+              alt={product.name}
+              fill
+              className="object-cover opacity-90"
+            />
 
-        </div>
-        {/* <Image
-        src="/img/macbookM5.png"
-          alt="Macbook Pro M5"
-          width={400}
-          height={300}
-          className="w-full h-auto drop-shadow-[0_35px_35px_rgba(236,72,153,0.3)]"
-        /> */}
-        <div className='flex '>
-           <div>
-             <p>Flagship series</p>
-            <p>Macbook Pro Mac </p>
-           </div>
-           <div>The price </div>
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quidem rem nesciunt, recusandae ex quo dignissimos totam delectus dolorem ipsum eius unde, incidunt quia quis aliquam. Labore velit saepe omnis.
-        </div>
-        <ViewProductButton/>
+            {/* NEW Badge */}
+            <span className="absolute top-3 left-3  text-white text-xs font-bold px-2 py-1 rounded-md">
+              NEW
+            </span>
 
+            {/* Star Rating */}
+            <div className="absolute top-10 left-3 flex items-center gap-1 bg-white text-black text-xs font-semibold px-2 py-1 rounded-full shadow">
+              <Star size={12} className="fill-yellow-400 text-yellow-400" />
+              4.9
+            </div>
+          </div>
+
+          {/* Content Area */}
+          <div className="flex flex-col gap-2 p-4 flex-1">
+
+            {/* Category + Price */}
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <p className="text-[11px] font-bold text-blue-600 uppercase tracking-widest">
+                  Flagship Series
+                </p>
+                <h2 className="text-base font-bold text-gray-900 leading-tight">
+                  {product.name}
+                </h2>
+              </div>
+              <p className="text-lg font-bold text-gray-900 whitespace-nowrap">
+                ${product.price}
+              </p>
+            </div>
+
+            {/* Description */}
+            <p className="text-sm text-gray-500 leading-snug line-clamp-2">
+              {product.description}
+            </p>
+
+            {/* Button */}
+            <button className="mt-auto w-full flex items-center justify-center gap-2 bg-[#1a1f2e] hover:bg-[#2a2f3e] text-white text-sm font-semibold py-3 rounded-xl transition-colors duration-200">
+              View Product
+              <ArrowUpRight />
+            </button>
+          </div>
+        </div>
+      ))}
     </div>
-  )
+  );
 }

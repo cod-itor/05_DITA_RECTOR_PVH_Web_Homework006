@@ -12,12 +12,14 @@ const products  = await product.payload;
 
 
   return (
-    <div className='flex'>
+    <div className='flex flex-col'>
       <h1>List of All Product</h1>
       <form action="search">
         <input type="text" placeholder=''/>
       </form>
-      <ProductCard/>
+      <div>
+        <ProductCard products = {products}/>
+      </div>
 
 
 
