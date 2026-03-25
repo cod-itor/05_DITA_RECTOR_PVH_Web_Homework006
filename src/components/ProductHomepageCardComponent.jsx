@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Zap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ViewProductButton from "./ViewProductButton";
 
 export default function ProductHomepageCardComponent() {
   return (
@@ -42,10 +43,7 @@ export default function ProductHomepageCardComponent() {
         </div>
 
         <Link href="/products">
-          <Button className="group/btn bg-pink-400 hover:bg-pink-600 text-white h-14 px-8 rounded-2xl font-bold shadow-lg shadow-pink-200 transition-all active:scale-95 flex gap-2">
-            View Details
-            <ArrowRight className="size-4 transition-transform group-hover/btn:translate-x-1" />
-          </Button>
+         <ViewProductButton/>
         </Link>
       </div>
     </div>
