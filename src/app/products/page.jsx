@@ -1,3 +1,5 @@
+import ProductCard from '@/components/ProductCard';
+import ViewProductButton from '@/components/ViewProductButton';
 import React from 'react'
 
 export default async function page() {
@@ -15,6 +17,8 @@ const products  = await product.payload;
       <form action="search">
         <input type="text" placeholder=''/>
       </form>
+      <ProductCard/>
+
 
 
 
