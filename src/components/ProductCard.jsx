@@ -1,7 +1,10 @@
+"use client";
+
 import React from 'react'
 import Image from "next/image";
 import { Star, ArrowUpRight } from 'lucide-react';
 import ViewProductButton from './ViewProductButton';
+import Link from "next/link";
 
 export default function ProductCard({ products }) {
   if (!products) return null;
@@ -13,7 +16,6 @@ export default function ProductCard({ products }) {
           key={product.productId}
           className="w-[280px] sm:w-[300px] flex flex-col rounded-2xl border border-gray-200 overflow-hidden shadow-md bg-white"
         >
-          {/* Image Area */}
           <div className="relative w-full h-[250px] bg-[#1a1f2e]">
             <Image
               src="/img/ladyHoldingLaptop.png"
@@ -21,23 +23,17 @@ export default function ProductCard({ products }) {
               fill
               className="object-cover opacity-90"
             />
-
-            {/* NEW Badge */}
             <span className="absolute top-3 left-3  text-white text-xs font-bold px-2 py-1 rounded-md">
               NEW
             </span>
-
-            {/* Star Rating */}
             <div className="absolute top-10 left-3 flex items-center gap-1 bg-white text-black text-xs font-semibold px-2 py-1 rounded-full shadow">
               <Star size={12} className="fill-yellow-400 text-yellow-400" />
               4.9
             </div>
           </div>
 
-          {/* Content Area */}
           <div className="flex flex-col gap-2 p-4 flex-1">
 
-            {/* Category + Price */}
             <div className="flex items-start justify-between gap-2">
               <div>
                 <p className="text-[11px] font-bold text-blue-600 uppercase tracking-widest">
@@ -52,16 +48,14 @@ export default function ProductCard({ products }) {
               </p>
             </div>
 
-            {/* Description */}
             <p className="text-sm text-gray-500 leading-snug line-clamp-2">
               {product.description}
             </p>
+            <Link href={`/products/${product.productId}`} >
+            <ViewProductButton/>
+            </Link>
 
-            {/* Button */}
-            <button className="mt-auto w-full flex items-center justify-center gap-2 bg-[#1a1f2e] hover:bg-[#2a2f3e] text-white text-sm font-semibold py-3 rounded-xl transition-colors duration-200">
-              View Product
-              <ArrowUpRight />
-            </button>
+          
           </div>
         </div>
       ))}
