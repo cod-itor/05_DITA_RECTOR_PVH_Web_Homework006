@@ -14,7 +14,7 @@ export default function ProductCard({ products }) {
           className="w-[280px] sm:w-[300px] flex flex-col rounded-2xl border border-gray-200 overflow-hidden shadow-md bg-white"
         >
           {/* Image Area */}
-          <div className="relative w-full h-[300px] bg-[#1a1f2e]">
+          <div className="relative w-full h-[250px] bg-[#1a1f2e]">
             <Image
               src="/img/ladyHoldingLaptop.png"
               alt={product.name}
