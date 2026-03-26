@@ -34,7 +34,7 @@ export default function ProductDetails({ product }) {
             </div>
 
             <Image
-              src={product.imageUrl}
+              src="/img/macbookM5.png"
               alt={product.name}
               width={400}
               height={350}

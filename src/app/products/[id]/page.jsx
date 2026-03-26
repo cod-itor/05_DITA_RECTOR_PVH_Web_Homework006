@@ -2,10 +2,10 @@ import ProductDetails from "@/components/ProductDetails";
 import { notFound } from "next/navigation";
 
 export default async function ProductPage({ params }) {
-  const { productId } = params;
+  const { id } = params;            // <-- use `id`, not `productId`
 
   const res = await fetch(
-    `https://homework-api.noevchanmakara.site/api/v1/products/${productId}`,
+    `https://homework-api.noevchanmakara.site/api/v1/products/${id}`,
   );
 
   if (!res.ok) {

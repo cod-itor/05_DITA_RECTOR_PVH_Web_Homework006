@@ -20,11 +20,6 @@ const products  = await product.payload;
       <div>
         <ProductCard products = {products}/>
       </div>
-
-
-
-
-      
     </div>
   )
 }
