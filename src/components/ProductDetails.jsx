@@ -10,7 +10,7 @@ export default function ProductDetails({ product }) {
   if (!product) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+    <div className=" bg-gray-50 flex items-center justify-center p-6">
       <div className="bg-white rounded-3xl shadow-sm border border-gray-100 w-full max-w-5xl p-8">
         <div className="flex flex-col md:flex-row gap-10">
 
@@ -19,7 +19,7 @@ export default function ProductDetails({ product }) {
               <span className="bg-[#1a1f2e] text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-wider">
                 NEW ARRIVAL
               </span>
-              <span className="bg-[#1a1f2e] text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-wider">
+              <span className="bg-[#e3f3f8] text-[#1394b9] text-[10px] font-bold px-3 py-1 rounded-full tracking-wider">
                 FREE SHIPPING
               </span>
             </div>
