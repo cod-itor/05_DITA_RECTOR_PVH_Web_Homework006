@@ -31,7 +31,7 @@ export function AppSidebar() {
       <SidebarHeader className="border-b border-slate-200 px-6 py-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-cyan-400 to-cyan-600 shadow-md">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br bg-cyan-400 shadow-md">
               <ShoppingBag className="h-5 w-5 text-white" />
             </div>
             <div className="leading-tight">
