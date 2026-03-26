@@ -36,9 +36,9 @@ export function AppSidebar() {
             </div>
             <div className="leading-tight">
               <p className="text-sm font-bold tracking-wide text-slate-900">
-                HRD SHOP
+                <span className="text-[#05b6da] font-bold">HRD</span> <span className="text-[#175efc] font-bold">SHOP</span>
               </p>
-              <p className="text-xs font-medium text-slate-500">Admin Panel</p>
+              <p className="text-xs font-medium text-slate-500">Admin V2.0</p>
             </div>
           </div>
         </div>
@@ -55,17 +55,17 @@ export function AppSidebar() {
             <SidebarMenu className="space-y-2">
               <SidebarMenuItem>
                 <SidebarMenuButton>
-                  <a href="/products" className="flex items-center gap-3">
+                  <a href="/products" className="flex items-center hover:text-white gap-3">
                     <LayoutGrid
-                      className={`h-5 w-5 shrink-0 transition-colors ${pathname === "/products" ? "text-cyan-600" : "text-slate-400 group-hover:text-slate-600"}`}
+                      className={`h-5 w-5 shrink-0 `}
                     />
-                    <span className="text-sm font-medium">Products</span>
+                    <span className="text-sm ">Products</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton>
-                  <a href="/customers" className="flex items-center gap-3">
+                  <a href="/customer" className="flex items-center gap-3">
                     <Users
                       className={`h-5 w-5 shrink-0 transition-colors ${pathname === "/customers" ? "text-cyan-600" : "text-slate-400 group-hover:text-slate-600"}`}
                     />
