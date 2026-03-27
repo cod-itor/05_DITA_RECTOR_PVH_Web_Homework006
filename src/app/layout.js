@@ -5,6 +5,11 @@ import { AppSidebar } from "../components/SideBar";
 import { Navbar } from "../components/Navbar";
 import {TooltipProvider} from "../components/ui/tooltip"
 
+const geistSans = Geist({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -18,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistMono.variable} antialiased `}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
         <TooltipProvider delayDuration={0}>
         <SidebarProvider>
           <AppSidebar />

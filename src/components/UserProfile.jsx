@@ -1,5 +1,6 @@
+"use client";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,55 +8,97 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import {
   BadgeCheckIcon,
-  BellIcon,
   CreditCardIcon,
-  Settings2Icon
-} from "lucide-react"
+  Settings2Icon,
+  LogOut,
+} from "lucide-react";
+import Image from "next/image";
 
-export function UserProfile() {
+export function UserProfile({
+  userName = "Admin User",
+  userRole = "KSHRD",
+  userEmail = "admin@hrshop.com",
+  userImage = "/img/macbookM5.png",
+}) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className=" w-40 rounded-full text-black">
-         <div className="flex items-center gap-2">
-            <div>
-               Image
+        <Button
+          variant="ghost"
+          size="icon"
+          className="w-40 h-12 px-2 rounded-lg hover:bg-slate-100 transition-colors"
+        >
+          <div className="flex items-center gap-3 w-full">
+            {/* Profile Image */}
+            <div className="relative h-9 w-9 shrink-0 rounded-full overflow-hidden border border-slate-200">
+              <Image
+                src={userImage}
+                alt={userName}
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-            <div>
-                <h1>Admin User</h1>
-                <h1 className="text-slate-400 ">KSHRD</h1>
+
+            {/* User Info */}
+            <div className="flex flex-col items-start min-w-0 flex-1">
+              <h1 className="text-sm font-semibold text-slate-900 truncate">
+                {userName}
+              </h1>
+              <p className="text-xs text-slate-500 truncate">{userRole}</p>
             </div>
-            
-         </div>
+          </div>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuGroup>
-        <DropdownMenuItem>
-             <h1>Admin User</h1>
-            <h2>AdminUser@gmail.com</h2>
 
-        </DropdownMenuItem>
-            <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <BadgeCheckIcon />
-            Profile
+      <DropdownMenuContent align="end" className="w-56">
+        {/* User Header Section */}
+        <div className="flex items-center gap-3 px-2 py-3 mb-2">
+          <div className="relative h-10 w-10 shrink-0 rounded-full overflow-hidden border border-slate-200">
+            <Image
+              src={userImage}
+              alt={userName}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="flex flex-col min-w-0 flex-1">
+            <h2 className="text-sm font-semibold text-slate-900 truncate">
+              {userName}
+            </h2>
+            <p className="text-xs text-slate-500 truncate">{userEmail}</p>
+          </div>
+        </div>
+
+        <DropdownMenuSeparator className="my-2" />
+
+        {/* Menu Items */}
+        <DropdownMenuGroup>
+          <DropdownMenuItem className="flex items-center gap-2 cursor-pointer">
+            <BadgeCheckIcon className="h-4 w-4 text-slate-500" />
+            <span>My Profile</span>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCardIcon />
-            Billing
+          <DropdownMenuItem className="flex items-center gap-2 cursor-pointer">
+            <CreditCardIcon className="h-4 w-4 text-slate-500" />
+            <span>Billing</span>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Settings2Icon />
-            Setting
+          <DropdownMenuItem className="flex items-center gap-2 cursor-pointer">
+            <Settings2Icon className="h-4 w-4 text-slate-500" />
+            <span>Settings</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        
+
+        <DropdownMenuSeparator className="my-2" />
+
+        {/* Logout */}
+        <DropdownMenuItem className="flex items-center gap-2 cursor-pointer text-red-600 hover:text-red-700 hover:bg-red-50">
+          <LogOut className="h-4 w-4" />
+          <span>Sign Out</span>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
