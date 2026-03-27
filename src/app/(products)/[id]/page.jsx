@@ -1,23 +1,16 @@
 import ProductDetails from "@/components/ProductDetails";
+import { productService } from "@/service/ProductService";
 import { notFound } from "next/navigation";
 
 export default async function ProductPage({ params }) {
-  const { id } = params;            // <-- use `id`, not `productId`
+  const { id } = params; 
+  let product = null;
 
-  const res = await fetch(
-    `https://homework-api.noevchanmakara.site/api/v1/products/${id}`,
-  );
-
-  if (!res.ok) {
-    
+  try {
+    product = await productService.getProductById(id);
+  } catch (error) {
     return notFound();
   }
-
-  const data = await res.json();
-
-  const product = Array.isArray(data.payload)
-    ? data.payload[0]
-    : data.payload || null;
 
   if (!product) return notFound();
 
