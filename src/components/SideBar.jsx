@@ -36,16 +36,15 @@ export function AppSidebar() {
             </div>
             <div className="leading-tight">
               <p className="text-sm font-bold tracking-wide text-slate-900">
-                <span className="text-[#05b6da] font-bold">HRD</span> <span className="text-[#175efc] font-bold">SHOP</span>
+                <span className="text-[#05b6da] font-bold">HRD</span>{" "}
+                <span className="text-[#175efc] font-bold">SHOP</span>
               </p>
               <p className="text-xs font-medium text-slate-500">Admin V2.0</p>
             </div>
           </div>
         </div>
       </SidebarHeader>
-      
 
-      {/* ── Navigation ── */}
       <SidebarContent className="px-3 py-6">
         <SidebarGroup>
           <SidebarGroupLabel className="mb-4 px-2 text-2xl text-black">
@@ -55,41 +54,85 @@ export function AppSidebar() {
             <SidebarMenu className="space-y-2">
               <SidebarMenuItem>
                 <SidebarMenuButton>
-                  <a href="/products" className="flex items-center hover:text-white gap-3">
+                  <a
+                    href="/products"
+                    className={`flex w-full items-center gap-3 rounded-2xl px-3 py-2 text-sm font-medium transition-colors ${
+                      pathname === "/products"
+                        ? "bg-[#05b6da] text-white"
+                        : "text-slate-600 hover:bg-[#05b6da] hover:text-white"
+                    }`}
+                  >
                     <LayoutGrid
-                      className={`h-5 w-5 shrink-0 `}
+                      className={`h-5 w-5 shrink-0 transition-colors ${
+                        pathname === "/products"
+                          ? "text-white"
+                          : "text-slate-400 group-hover:text-white"
+                      }`}
                     />
-                    <span className="text-sm ">Products</span>
+                    <span>Products</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton>
-                  <a href="/customer" className="flex items-center gap-3">
+                  <a
+                    href="/customers"
+                    className={`flex w-full items-center gap-3 rounded-2xl px-3 py-2 text-sm font-medium transition-colors ${
+                      pathname === "/customers"
+                        ? "bg-[#05b6da] text-white"
+                        : "text-slate-600 hover:bg-[#05b6da] hover:text-white"
+                    }`}
+                  >
                     <Users
-                      className={`h-5 w-5 shrink-0 transition-colors ${pathname === "/customers" ? "text-cyan-600" : "text-slate-400 group-hover:text-slate-600"}`}
+                      className={`h-5 w-5 shrink-0 transition-colors ${
+                        pathname === "/customers"
+                          ? "text-white"
+                          : "text-slate-400 group-hover:text-white"
+                      }`}
                     />
-                    <span className="text-sm font-medium">Customer</span>
+                    <span>Customer</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton>
-                  <a href="/categories" className="flex items-center gap-3">
+                  <a
+                    href="/categories"
+                    className={`flex w-full items-center gap-3 rounded-2xl px-3 py-2 text-sm font-medium transition-colors ${
+                      pathname === "/categories"
+                        ? "bg-[#05b6da] text-white"
+                        : "text-slate-600 hover:bg-[#05b6da] hover:text-white"
+                    }`}
+                  >
                     <BookOpen
-                      className={`h-5 w-5 shrink-0 transition-colors ${pathname === "/categories" ? "text-cyan-600" : "text-slate-400 group-hover:text-slate-600"}`}
+                      className={`h-5 w-5 shrink-0 transition-colors ${
+                        pathname === "/categories"
+                          ? "text-white"
+                          : "text-slate-400 group-hover:text-white"
+                      }`}
                     />
-                    <span className="text-sm font-medium">Categories</span>
+                    <span>Categories</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton>
-                  <a href="/settings" className="flex items-center gap-3">
+                  <a
+                    href="/settings"
+                    className={`flex w-full items-center gap-3 rounded-2xl px-3 py-2 text-sm font-medium transition-colors ${
+                      pathname === "/settings"
+                        ? "bg-[#05b6da] text-white"
+                        : "text-slate-600 hover:bg-[#05b6da] hover:text-white"
+                    }`}
+                  >
                     <Settings
-                      className={`h-5 w-5 shrink-0 transition-colors ${pathname === "/settings" ? "text-cyan-600" : "text-slate-400 group-hover:text-slate-600"}`}
+                      className={`h-5 w-5 shrink-0 transition-colors ${
+                        pathname === "/settings"
+                          ? "text-white"
+                          : "text-slate-400 group-hover:text-white"
+                      }`}
                     />
-                    <span className="text-sm font-medium">Settings</span>
+                    <span>Settings</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
