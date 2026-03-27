@@ -11,14 +11,11 @@ export default function ProductCard({ products }) {
   return (
     <div className="flex flex-wrap -mx-4">
       {products.map((product) => (
-        
-        <div 
-          key={product.productId} 
+        <div
+          key={product.productId}
           className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4"
         >
           <div className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-            
-
             <div className="relative h-56 w-full overflow-hidden bg-[#0f172a]">
               <Image
                 src="/img/macbookM5.png"
@@ -35,7 +32,6 @@ export default function ProductCard({ products }) {
               </div>
             </div>
 
-            {/* Content Section */}
             <div className="flex flex-1 flex-col p-6">
               <div className="mb-3 flex items-start justify-between gap-2">
                 <div className="min-w-0 flex-1">
@@ -55,9 +51,11 @@ export default function ProductCard({ products }) {
                 {product.description}
               </p>
 
-              {/* mt-auto pushes the button to the bottom if descriptions vary in length */}
               <div className="mt-auto">
-                <Link href={`/products/${product.productId}`} className="block w-full">
+                <Link
+                  href={`/products/${product.productId}`}
+                  className="block w-full"
+                >
                   <ViewProductButton />
                 </Link>
               </div>

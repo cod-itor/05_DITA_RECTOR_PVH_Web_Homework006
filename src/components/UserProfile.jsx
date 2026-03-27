@@ -32,7 +32,6 @@ export function UserProfile({
           className="w-40 h-12 px-2 rounded-lg hover:bg-slate-100 transition-colors"
         >
           <div className="flex items-center gap-3 w-full">
-            {/* Profile Image */}
             <div className="relative h-9 w-9 shrink-0 rounded-full overflow-hidden border border-slate-200">
               <Image
                 src={userImage}
@@ -43,7 +42,6 @@ export function UserProfile({
               />
             </div>
 
-            {/* User Info */}
             <div className="flex flex-col items-start min-w-0 flex-1">
               <h1 className="text-sm font-semibold text-slate-900 truncate">
                 {userName}
@@ -55,7 +53,6 @@ export function UserProfile({
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-56">
-        {/* User Header Section */}
         <div className="flex items-center gap-3 px-2 py-3 mb-2">
           <div className="relative h-10 w-10 shrink-0 rounded-full overflow-hidden border border-slate-200">
             <Image
@@ -75,7 +72,6 @@ export function UserProfile({
 
         <DropdownMenuSeparator className="my-2" />
 
-        {/* Menu Items */}
         <DropdownMenuGroup>
           <DropdownMenuItem className="flex items-center gap-2 cursor-pointer">
             <BadgeCheckIcon className="h-4 w-4 text-slate-500" />
@@ -93,7 +89,6 @@ export function UserProfile({
 
         <DropdownMenuSeparator className="my-2" />
 
-        {/* Logout */}
         <DropdownMenuItem className="flex items-center gap-2 cursor-pointer text-red-600 hover:text-red-700 hover:bg-red-50">
           <LogOut className="h-4 w-4" />
           <span>Sign Out</span>

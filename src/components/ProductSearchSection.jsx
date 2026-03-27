@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Example from "@/components/examples/input/types/input-types-4";
 import ProductCard from "@/components/ProductCard";
+import { EmptyStateProducts } from "@/components/EmptyState";
 
 export default function ProductSearchSection({ products }) {
   const [query, setQuery] = useState("");
@@ -40,9 +41,7 @@ export default function ProductSearchSection({ products }) {
         {filteredProducts.length ? (
           <ProductCard products={filteredProducts} />
         ) : (
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500">
-            No products match “{query}”.
-          </div>
+          <EmptyStateProducts query={query} />
         )}
       </div>
     </div>

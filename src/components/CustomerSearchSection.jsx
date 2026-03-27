@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Example from "@/components/examples/input/types/input-types-4";
 import CustomerCard from "@/components/CustomerCard";
+import { EmptyStateCustomers } from "@/components/EmptyState";
 
 export default function CustomerSearchSection({ customers }) {
   const [query, setQuery] = useState("");
@@ -53,9 +54,7 @@ export default function CustomerSearchSection({ customers }) {
         {filteredCustomers.length ? (
           <CustomerCard customers={filteredCustomers} />
         ) : (
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500">
-            No customers match “{query}”.
-          </div>
+          <EmptyStateCustomers query={query} />
         )}
       </div>
     </main>
