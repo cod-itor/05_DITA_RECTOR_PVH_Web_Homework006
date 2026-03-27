@@ -10,11 +10,11 @@ export default function ProductCard({ products }) {
   if (!products) return null;
 
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="flex flex-wrap flex-row">
       {products.map((product) => (
         <div
           key={product.productId}
-          className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-lg"
+          className="flex h-full flex-col overflow-hidden rounded-[2rem] border  border-slate-200 bg-white shadow-lg"
         >
           <div className="relative w-full h-56 bg-[#0f172a]">
             <Image
@@ -33,7 +33,7 @@ export default function ProductCard({ products }) {
           </div>
 
           <div className="flex flex-col gap-2 p-4 flex-1">
-            <div className="flex items-start justify-between gap-2">
+            <div className="flex items justify-between gap-2">
               <div>
                 <p className="text-[11px] font-bold text-blue-600 uppercase tracking-widest">
                   Flagship Series
