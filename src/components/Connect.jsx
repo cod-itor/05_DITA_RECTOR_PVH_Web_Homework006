@@ -8,7 +8,6 @@ export async function Connect() {
   return (
     <div>
       <ProductHomepageCardComponent products={products} />
-      {/* <CustomerHomepageCardComponent/> */}
     </div>
   );
 }

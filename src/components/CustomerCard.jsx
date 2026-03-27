@@ -68,7 +68,7 @@ export default function CustomerCard({ customers }) {
 
                 <td className="px-8 py-6 text-right">
                   <Link
-                    href={`/customer/${c.customerId}`}
+                    href={`/customers/${c.customerId}`}
                     className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 shadow-sm transition-all hover:bg-slate-900 hover:text-white hover:border-slate-900"
                   >
                     <Eye className="h-4 w-4" />

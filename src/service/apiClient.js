@@ -4,7 +4,6 @@ export async function apiClient(endpoint, options = {}) {
   const defaultOptions = {
     headers: {
       "Content-Type": "application/json",
-      // You can add Auth tokens here later
     },
     ...options,
   };
