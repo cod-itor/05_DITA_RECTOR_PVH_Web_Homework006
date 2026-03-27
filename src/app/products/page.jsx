@@ -1,27 +1,9 @@
-import ProductCard from "@/components/ProductCard";
-import Example from "@/components/examples/input/types/input-types-4";
+import ProductSearchSection from "@/components/ProductSearchSection";
 import { productService } from "@/service/ProductService";
 import React from "react";
 
 export default async function page() {
   const products = await productService.getAllProducts();
 
-  return (
-    <div className=" bg-slate-50 py-10">
-      <div className="mx-auto flex flex-col gap-8 px-6">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div className="space-y-1">
-            <h1 className="text-4xl font-black text-slate-900">
-              List of All Product
-            </h1>
-          </div>
-          <div className="w-full md:w-80">
-            <Example />
-          </div>
-        </div>
-
-        <ProductCard products={products} />
-      </div>
-    </div>
-  );
+  return <ProductSearchSection products={products} />;
 }

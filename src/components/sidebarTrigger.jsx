@@ -9,9 +9,6 @@ export function FloatingTrigger() {
   const isCollapsed = state === "collapsed";
 
   return (
-    /* We position this absolute to the sidebar container.
-       'left-0' aligns it to the start, and we offset it slightly.
-    */
     <div className="fixed top-20 left-0 z-50 transition-all  duration-300 group-data-[state=collapsed]:left-0">
        <SidebarTrigger 
          className={`
@@ -21,7 +18,6 @@ export function FloatingTrigger() {
            ${isCollapsed ? "translate-x-[4.5rem]" : "translate-x-[15rem]"}
          `}
        >
-         {/* Custom icon logic if you want to change arrows based on state */}
          {isCollapsed ? (
            <ChevronRight className="h-4 w-4 text-slate-600" />
          ) : (

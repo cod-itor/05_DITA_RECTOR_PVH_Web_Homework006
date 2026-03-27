@@ -3,8 +3,7 @@ import { productService } from "@/service/ProductService";
 import { notFound } from "next/navigation";
 
 export default async function ProductPage({ params }) {
-  const { id } = params; // <-- use `id`, not `productId`
-
+  const { id } = params; 
   let product = null;
 
   try {
