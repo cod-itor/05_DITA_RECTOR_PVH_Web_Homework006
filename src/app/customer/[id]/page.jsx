@@ -1,22 +1,19 @@
 import { notFound } from "next/navigation";
 import { CustomerProfileCard } from "@/components/CustomerProfileCard";
+import { customerService } from "@/service/CustomerService";
 
 export default async function CustomerDetailPage({ params }) {
   const { id } = params;
 
-  const res = await fetch(
-    `https://homework-api.noevchanmakara.site/api/v1/customers/${id}`,
-    { next: { revalidate: 10 } },
-  );
+  let customer = null;
 
-  if (!res.ok) {
+  try {
+    customer = await customerService.getCustomerById(id, {
+      next: { revalidate: 10 },
+    });
+  } catch (error) {
     return notFound();
   }
-
-  const data = await res.json();
-  const customer = Array.isArray(data.payload)
-    ? data.payload[0]
-    : data.payload || null;
 
   if (!customer) return notFound();
 

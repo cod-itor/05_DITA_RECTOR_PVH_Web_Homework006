@@ -1,8 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { SidebarProvider, SidebarInset } from "../components/ui/sidebar";
+import { SidebarProvider, SidebarInset, SidebarTrigger } from "../components/ui/sidebar";
 import { AppSidebar } from "../components/SideBar";
 import { Navbar } from "../components/Navbar";
+import {TooltipProvider} from "../components/ui/tooltip"
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -18,8 +19,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistMono.variable} antialiased `}>
+        <TooltipProvider delayDuration={0}>
         <SidebarProvider>
           <AppSidebar />
+          <SidebarTrigger/>
           <SidebarInset>
             <Navbar />
             <main className="flex-1 overflow-auto bg-slate-50">
@@ -27,6 +30,8 @@ export default function RootLayout({ children }) {
             </main>
           </SidebarInset>
         </SidebarProvider>
+        </TooltipProvider>
+        
       </body>
     </html>
   );
