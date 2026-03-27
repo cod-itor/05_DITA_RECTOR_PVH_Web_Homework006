@@ -31,14 +31,12 @@ export function AppSidebar() {
   ];
 
   return (
-    // 1. Added collapsible="icon"
     <Sidebar collapsible="icon" className="border-r border-slate-200">
       <SidebarHeader className="px-3 py-6">
         <div className="flex items-center gap-3 overflow-hidden">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-400 shadow-md">
             <ShoppingBag className="h-5 w-5 text-white" />
           </div>
-          {/* group-data-[state=collapsed]:hidden is the Shadcn magic class */}
           <div className="leading-tight group-data-[state=collapsed]:hidden">
             <p className="text-sm font-bold tracking-wide text-slate-900">
               <span className="text-[#05b6da]">HRD</span>{" "}
@@ -61,7 +59,7 @@ export function AppSidebar() {
                   <SidebarMenuButton
                     asChild
                     isActive={pathname === item.href}
-                    tooltip={item.name} // Shows name on hover when collapsed
+                    tooltip={item.name} 
                     className={`h-11 rounded-2xl transition-all duration-200 ${
                       pathname === item.href
                         ? "bg-[#05b6da] text-white hover:bg-[#05b6da] hover:text-white"

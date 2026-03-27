@@ -22,7 +22,9 @@ export default function CustomerSearchSection({ customers }) {
         ""
       ).toLowerCase();
 
-      return name.includes(normalized) || descriptionCandidate.includes(normalized);
+      return (
+        name.includes(normalized) || descriptionCandidate.includes(normalized)
+      );
     });
   }, [customers, query]);
 
